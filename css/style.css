@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+
+* { 
+    box-sizing: border-box;
+}
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    border-left: 10px solid white;
+    border-right: 10px solid white;
+    font-family: 'Nanum Gothic', sans-serif;
+    background-color: #e2e2e2;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+}
+ul {
+    width: 30%;
+    padding: 0;
+    text-align: center;
+}
+ul li {
+    list-style-type: none;
+    display: inline;
+}
+ul li a {
+    text-decoration: none;
+    color: black;
+}
+body img {
+    background-repeat: no-repeat;
+    background-size: auto;
+    object-fit: cover;
+}
+.container {
+    height: 100%;
+    width: 100%;
+    padding: 50px 10px;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 60px;
+ }
+header .nav-bar li {
+    margin-right: 80px;
+    margin-left: 80px;
+}
+header .nav-bar li a {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#header-branding {
+    margin-left: 90px;
+    margin-right: 90px;
+    text-align: center;
+    width: 400px;
+}
+header .header-area h2 {
+    font-size: 2em;
+    margin: 0;
+}
+header .header-area h2 span {
+    border: 3px solid white;
+    background-color: #29723d;
+    color: white;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+header .header-area p {
+    text-align: right;
+    margin: 0;
+}
+.showcase {
+    min-height: 100vh;
+    display: flex;
+    padding: 10px;
+}
+.showcase .photo {
+    background-color: white;
+    border-radius: 2px;
+    width: 80%;
+    height: 100%;
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    
+}
+.showcase .photo img {
+    width: 100%;
+    height: 250px;
+    transition: .3s;
+}
+.showcase .photo img:hover {
+    text-align: center;
+    width: 210px;
+    border-radius: 5px;
+    transform: scale(1.1);
+}
+.showcase .photo .description-area {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.showcase .photo .description-area button {
+    border-radius: 70px;
+}
+.showcase .photo button {
+    cursor: pointer;
+}
+footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+    margin-bottom: 100px;
+}
+footer .footer-container .line {
+    border-right: 1px solid white;
+}
+footer .footer-container {
+    display: flex;
+    text-align: center;
+}
+footer .footer-area {
+    width: 50%;
+    
+}
+footer .area-a {
+    margin-left: 20px;
+}
+footer .area-b {
+    margin-right: 20px;
+}
+footer p {
+    align-self: center;
+}
+footer .footer-container .area-b ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+footer .footer-container .area-b ul li {
+    display: block;
+    font-size: 2em; 
+    padding: 8px;
+}
+.pop-up-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.pop-up-container.show-pop-up {
+    display: block;
+}
+.pop-up-content {
+    position: absolute;
+                /* centering */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+}
+.pop-up-container .pop-up-content img {
+    width: 1000px;
+    height: 600px;
+    border-radius: 4px;
+}
