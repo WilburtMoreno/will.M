@@ -1,16 +1,29 @@
-const popUp = document.getElementById('pop-up');
-const showcase = document.getElementById('showcase');
-const image = document.querySelector('.image');
+// 'div' for the container of the fullview image popup
+const lightbox = document.createElement('div');
+lightbox.id = 'lightbox';
+document.body.appendChild(lightbox);
 
-const getImage = function(image) {
-    return image.src;
-};
+// gets all the images in a array form
+const images = document.querySelectorAll('.images');
 
-showcase.addEventListener('click', e => {
+images.forEach( image => {
 
-    image.classList.add('show-pop-up');
-   
-   
-    console.log(e.target);
+    //EventListener
+     image.addEventListener('click', e => {
+        lightbox.classList.add('active');
+        const img = document.createElement('img');
+        img.src = image.src;
+
+        while(lightbox.firstChild) {
+            lightbox.removeChild(lightbox.firstChild);
+        }
+        lightbox.appendChild(img);
+     });
 });
-window.addEventListener('click', e => e.target == popUp ? popUp.classList.remove('show-pop-up') : false); 
+
+lightbox.addEventListener('click', e => {
+    if(e.target !== e.currentTarget) return
+     lightbox.classList.remove('active');
+});
+
+
