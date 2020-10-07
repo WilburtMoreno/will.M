@@ -17,12 +17,13 @@ images.forEach( (image, index) => {
    image.id = "image-"+ (index) ; 
 
     //EventListener
-     image.addEventListener('click', e => {
+        image.addEventListener('click', e => {
         lightbox.classList.add('active');
         const img = document.createElement('img');
         img.src = image.src;
 
-       closeImage(lightbox, index);
+
+        closeImage(index);
         lightbox.appendChild(img);
 
         // Left Right Control
@@ -59,7 +60,7 @@ images.forEach( (image, index) => {
      
 });
 // Method
-function closeImage(lightbox, index) {
+function closeImage(index) {
     while(lightbox.firstChild) {
         lightbox.removeChild(lightbox.firstChild);
     }
@@ -71,22 +72,47 @@ function changeImg(prevNext) {
     let iterateImg;
     console.log('----------------------------------------------------------------');
     
+    // Manipulating images 
     if(prevNext === 0 ) {
-       iterateImg = imgArr[(currentImg-- -1)];
+       imgArr[(currentImg-- -1)];
         if(currentImg < 1) {
             currentImg = zeroBasedDotLength;
         }
     }
     if(prevNext === 1 ) {
-        iterateImg = imgArr[(currentImg++ -1)];
+        imgArr[(currentImg++ -1)];
         if(currentImg > zeroBasedDotLength) {
             currentImg = 1;
         } 
     }
 
-    console.log('Object: ');
-    console.log(imgArr[currentImg]);
-    console.log('output: '+ currentImg);
+    // Test //
+    //lightbox.removeChild('img');
+    // console.log('Object: ');
+    // console.log(imgArr[currentImg].src);
+    // console.log(imgArr[currentImg].id);
+    // console.log('output: '+ currentImg);
+    // console.log('first child');
+    // console.log(lightbox.firstChild);
+
+    // get the img source
+    const imageSplit = imgArr[currentImg].src.split('/');
+    const folderSource = imageSplit[3];
+    const photo = imageSplit[4];
+
+    // remove current Photo
+    lightbox.removeChild(lightbox.firstChild);
+
+    // ASSEMBLE!!!!
+    const newImage = document.createElement('img');
+    lightbox.insertBefore(newImage, lightbox.firstChild);
+    newImage.setAttribute('id', imgArr[currentImg].id);
+    newImage.setAttribute('src', folderSource + '/' + photo);
+
+    // prev and next button display udjust
+    document.getElementById('prev').remove;
+    document.getElementById('next').remove;
+
 }
 //EventListener
 lightbox.addEventListener('click', e => {
