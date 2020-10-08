@@ -10,6 +10,7 @@ const imgArr = [];
 let currentImg;
 
 images.forEach( (image, index) => {
+
    // add the .images to an array called 'imgArr'
    imgArr.push(image);
 
@@ -32,9 +33,7 @@ images.forEach( (image, index) => {
             const calcImgEdges = ((window.innerWidth - imgWidth) / 2) - 80;
            
             //TEST
-            //console.log(imgArr);
-             console.log(currentImg);
-             console.log('index: ' + index);
+            //console.log(imgArr);   
 
             // Prev button
             const prevBtn = document.createElement('a');
@@ -70,7 +69,6 @@ function closeImage(index) {
 function changeImg(prevNext) {
     const zeroBasedDotLength = imgArr.length -1; 
     let iterateImg;
-    console.log('----------------------------------------------------------------');
     
     // Manipulating images 
     if(prevNext === 0 ) {
@@ -86,15 +84,6 @@ function changeImg(prevNext) {
         } 
     }
 
-    // Test //
-    //lightbox.removeChild('img');
-    // console.log('Object: ');
-    // console.log(imgArr[currentImg].src);
-    // console.log(imgArr[currentImg].id);
-    // console.log('output: '+ currentImg);
-    // console.log('first child');
-    // console.log(lightbox.firstChild);
-
     // get the img source
     const imageSplit = imgArr[currentImg].src.split('/');
     const folderSource = imageSplit[3];
@@ -105,14 +94,18 @@ function changeImg(prevNext) {
 
     // ASSEMBLE!!!!
     const newImage = document.createElement('img');
+    
+    // take note on this one
     lightbox.insertBefore(newImage, lightbox.firstChild);
     newImage.setAttribute('id', imgArr[currentImg].id);
     newImage.setAttribute('src', folderSource + '/' + photo);
 
     // prev and next button display udjust
-    document.getElementById('prev').remove;
-    document.getElementById('next').remove;
-
+    newImage.onload = function() {
+        const newPosition = ((window.innerWidth - this.width) / 2) - 80;
+        document.getElementById('prev').style.cssText = 'left:' +newPosition+ 'px';
+        document.getElementById('next').style.cssText = 'right:' +newPosition+ 'px'; 
+    };
 }
 //EventListener
 lightbox.addEventListener('click', e => {
