@@ -90,6 +90,7 @@ form .form-subject {
 }
 form .form-message {
     resize: none;
+    form-family: Arial, Helvetica, sans-serif;
 }
 form .form-btn {
     margin-top: 15px;
