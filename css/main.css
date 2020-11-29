@@ -3,9 +3,6 @@
 * { 
     box-sizing: border-box;
 }
-html {
-    height: 100%;
-}
 body {
     min-height: 100%;
     border-left: 10px solid white;
@@ -15,6 +12,20 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0 20px;
+}
+button {
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 4px;
+    background-color: #fff;
+}
+button:hover {
+    background-color: #b8b8b8;
+    color: #fff;
+}
+button:active {
+    background-color: #838383;
 }
 ul {
     width: 30%;
@@ -43,8 +54,8 @@ header {
     display: flex;
     align-content: center;
     justify-content: center;
-    margin-top: 30px;
-    margin-bottom: 60px;
+    margin-top: 50px;
+    margin-bottom: 30px;
  }
 header .nav-bar li {
     margin-right: 80px;
@@ -82,7 +93,7 @@ footer {
     margin-top: auto;
     display: flex;
     flex-direction: column;
-    padding: 20px 0 50px 0;
+    padding: 20px 0;
     margin-top: 50px
 }
 footer .footer-container .line {
@@ -119,3 +130,5 @@ footer .footer-container .area-b ul li {
     font-size: 2em; 
     padding: 8px;
 }
+
+

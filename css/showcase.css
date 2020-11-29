@@ -51,3 +51,56 @@
     align-items: center;
     cursor: pointer;
 }
+.popup-message {
+    background-color:rgba(0, 0, 0, 0.5);
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: 500ms, ease-in-out;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0; 
+    bottom: 0;
+
+    /* animation */
+    animation-name: modalopen;
+    animation-duration: 0.5s;
+}
+.popup-message.live {
+    display: flex;
+}
+.popup-message form {
+    background-color: #838383;
+    padding: 20px 30px;
+    border-radius: 4px;
+}
+form input {
+    width: 100%;
+}
+form .popup-form {
+    display: block;
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+form .form-subject {
+    border-radius: 0px;
+}
+form .form-message {
+    resize: none;
+}
+form .form-btn {
+    margin-top: 15px;
+    padding: 5px 10px;
+}
+
+@keyframes modalopen {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
