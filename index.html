@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/lightbox.css">
     <script defer src="js/script.js"></script>
+    <script defer src="js/formPopup.js"></script>
 </head>
 <body>
     <div class="container">
@@ -155,7 +156,7 @@
                 <!-- area a -->
                 <div class="footer-area area-a">
                     <h2>Any Question?</h2>
-                    <a href="#">Send me a message</a>
+                   <button type="submit" class="msg-btn" id="msg-btn">Send me a message</button>
                   </div>  
                   <div class="line"></div>
                 <!-- area b  -->
@@ -169,6 +170,14 @@
             </div>
             <p>© 2020 Wilburt Moreno Photography</p>
           </footer>
+    </div>
+    <div class="popup-message" id="popup-message">
+        <form>
+            <input type="text" class="popup-form form-email" placeholder="Email Address">
+            <input type="text" class="popup-form form-subject" placeholder="Subject">
+            <textarea class="popup-form form-message" rows="15" cols="45" placeholder="message..."></textarea>
+            <button type="submit" class="popup-form form-btn" id="form-btn">Send</button>
+        </form>
     </div>
 </body>
 </html>
